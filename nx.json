@@ -1,0 +1,20 @@
+{
+  "implicitDependencies": {
+    "go.mod": "*"
+  },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": []
+      }
+    }
+  },
+  "installation": {
+    "version": "16.5.5"
+  }
+}
