@@ -1,0 +1,6 @@
+# Add files here to ignore them from prettier formatting
+
+/dist
+/coverage
+.docusaurus/
+apps/bison-ingest/src/fixtures/ingestFull.spec.json
