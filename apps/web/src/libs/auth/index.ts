@@ -1,4 +1,6 @@
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { ApiClient, APIInstance } from './http';
+import { VerifyLoggedIn } from 'dto'
 
 export class AuthService {
   private api: APIInstance;
@@ -14,7 +16,8 @@ export class AuthService {
     this.api.defaults.headers.common['Authorization'] = `Bearer ${this.token}`;
   }
 
-  verifyLoggedIn() {
-    return this.api.post('/auth/verify');
+  async verifyLoggedIn(): Promise<VerifyLoggedIn> {
+    const data = await this.api.post('/auth/verify');
+    return data.data;
   }
 }
