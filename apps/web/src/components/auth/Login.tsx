@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../config';
+import { AuthService } from '../../libs/auth';
 
 export const Login: React.FC = () => {
 
@@ -9,7 +10,6 @@ export const Login: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-
     try {
       const creds = await signInWithEmailAndPassword(auth, email, password)
       const user = creds.user
@@ -21,9 +21,11 @@ export const Login: React.FC = () => {
     } catch (err) {
       console.log(err)
     }
-
-
   }
+
+  // verfy jwt token if present
+  const authService = new AuthService();
+  authService.verifyLoggedIn();
 
   return (
     <>
