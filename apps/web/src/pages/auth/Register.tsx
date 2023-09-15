@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Footer, Header } from "../../components/base";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../config";
-import { setTokenAndState } from "./jwt";
+import { setTokenAndState } from "../../libs/auth/jwt";
 import { useAppDispatch } from "../../redux/hooks";
 import { useNavigate } from "react-router-dom";
 

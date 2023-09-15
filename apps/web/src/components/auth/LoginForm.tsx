@@ -5,7 +5,7 @@ import { auth } from '../../config';
 import { useAppDispatch } from '../../redux/hooks';
 import { setLoggedIn } from '../../redux/auth/authSlice';
 import { AuthService } from '../../libs/auth';
-import { setTokenAndState } from '../../pages/auth/jwt';
+import { setTokenAndState } from '../../libs/auth/jwt';
 
 export const Login = () => {
 

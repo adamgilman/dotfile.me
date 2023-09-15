@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useAppSelector } from "../../redux/hooks"
+import AuthBreadcrumbs from "../nav/AuthBreadcrumbs"
 
 export function Header() {
   const { email, loggedIn } = useAppSelector(state => state.auth)
@@ -13,35 +14,7 @@ export function Header() {
             <p className="text-subtitle text-muted">Where dotfiles can be social</p>
           </div>
           <div className="col-12 col-md-6 order-md-2 order-first">
-            <nav
-              aria-label="breadcrumb"
-              className="breadcrumb-header float-start float-lg-end"
-            >
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item">
-                  <Link to="/">home</Link>
-                </li>
-                {loggedIn && (
-                  <li className="breadcrumb-item">
-                    {email}
-                  </li>
-                )}
-                {loggedIn && (
-                  <li className="breadcrumb-item">
-                    <Link to="/logout">logout</Link>
-                  </li>)}
-                {!loggedIn && (
-                  <li className="breadcrumb-item">
-                    <Link to="/login">login</Link>
-                  </li>
-                )}
-                {!loggedIn && (
-                  <li className="breadcrumb-item">
-                    <Link to="/register">register</Link>
-                  </li>
-                )}
-              </ol>
-            </nav>
+            <AuthBreadcrumbs loggedIn={loggedIn} email={email} />
           </div>
         </div>
       </div>

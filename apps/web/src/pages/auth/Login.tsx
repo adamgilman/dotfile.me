@@ -1,4 +1,4 @@
-import { Login } from "../../components/auth/Login";
+import { Login } from "../../components/auth/LoginForm";
 import { Footer, Header } from "../../components/base";
 
 export function LoginPage() {
